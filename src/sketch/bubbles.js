@@ -1,3 +1,5 @@
+export default function vp_bubbles() {
+	
  let bubbles=[];
 
 function setup () {
@@ -78,4 +80,5 @@ repaint() {
 
 
 
+}
 }

@@ -1,18 +1,28 @@
+export default function expandor(e) {
+
+	if(e) console.log(true)
  let bubble;
+const width=600;
+const height=600;
 
-function setup () {
-	createCanvas(600,400);
+e.setup = () => {
+
+let myCanvas =	e.createCanvas(width,height);
+
+		myCanvas.parent('container');
+
 		bubble= new Bubble(300,200,50);
-
 
 }
 
-function draw() {
-	background(50);
+e.draw = () => {
+	
+	e.background(50);
  bubble.show();
 
-if (mouseX>300) {
+if (e.mouseX>300) {
 	bubble.reverse(1)
+
 } else {
 	bubble.grow(0.5)
 }
@@ -34,13 +44,13 @@ constructor(posistionX,posistionY,radius) {
 }
 
 show() {
-	ellipse(this.x,this.y,this.rad*2, this.rad*2);
+	e.ellipse(this.x,this.y,this.rad*2, this.rad*2);
 		if (this.rad > 200) {
-		noStroke();
+		e.noStroke();
 	} 
-	fill(this.fill);
-	strokeWeight(this.strokeWeight);
-	stroke(this.stroke);
+	e.fill(this.fill);
+	e.strokeWeight(this.strokeWeight);
+	e.stroke(this.stroke);
 }
 
 grow(rate) {
@@ -58,4 +68,5 @@ reverse (rate) {
 	this.rad-=rate;
 }
 
+}
 }
